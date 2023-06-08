@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.url">jdbc:sqlite:users.db</property>
+        <property name="connection.username"></property>
+        <property name="connection.password"></property>
+
+        <!-- JDBC connection pool settings -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+        <!-- Specify the dialect for SQLite -->
+        <property name="dialect">org.hibernate.dialect.SQLiteDialect</property>
+
+        <!-- Mapping files -->
+        <!-- Add your entity class package here -->
+        <mapping class="com.example.issproj.Domain.User" />
+        <mapping class="com.example.issproj.Domain.Bug" />
+        <mapping class="com.example.issproj.Domain.Project" />
+
+    </session-factory>
+</hibernate-configuration>
